@@ -8,6 +8,12 @@ const List = () => {
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
+  const [showButton, setShowButton] = useState(false);
+  
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
 
   const fetchUsers = async (page) => {
     try {
@@ -41,6 +47,13 @@ const List = () => {
       !loading
     ) {
       setPage((prevPage) => prevPage + 1);
+    }
+
+    /* for scroll to top  */
+    if (window.scrollY > 300) {
+      setShowButton(true);
+    } else {
+      setShowButton(false);
     }
   }, [loading]);
 
@@ -83,6 +96,11 @@ const List = () => {
         )}
 
         {loading && <Loader />}
+        {showButton && (
+          <button className="back-to-top" onClick={scrollToTop}>
+            Back to Top
+          </button>
+        )}
       </div>
     </div>
   );

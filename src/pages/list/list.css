@@ -5,6 +5,19 @@
 }
 
 .search-field {
-  width:60%;
+  width: 60%;
   padding: 0.5rem;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  z-index: 1000;
 }
