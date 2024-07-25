@@ -44,7 +44,7 @@ const List = () => {
     }
   }, [loading]);
 
-  const filteredUsers = userWithImages.filter(
+  const filteredUsers = userWithImages?.filter(
     (user) =>
       (user?.name?.first + " " + user?.name?.last)
         .toLowerCase()
